@@ -28,4 +28,4 @@ WORKDIR /chia-blockchain
 
 ADD ./entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["bash", "/entrypoint.sh create-plots-k32"]
+ENTRYPOINT ["bash", "/entrypoint.sh", "create-plots-k32"]
