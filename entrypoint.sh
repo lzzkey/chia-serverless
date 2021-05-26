@@ -115,6 +115,7 @@ elif [ $1 = "create-plots-k32" ]; then
 	$cmd rm -rf $PLOTS_FINAL
     fi
     $cmd rm -rf $PLOTS_TMP
+    $cmd sleep 9999999
 else
     exec "$@"
 fi
