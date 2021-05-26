@@ -109,10 +109,11 @@ elif [ $1 = "create-plots-k32" ]; then
     if [[ $? != 0 ]]; then
         # TODO: Need retry logical
         echo "Upload plot file to bucket $BUCKET failed."
+    else
+    	echo "Upload plot file to bucket $BUCKET succesfully"
+    	echo "Removing final dir $PLOTS_FINAL..."
+	$cmd rm -rf $PLOTS_FINAL
     fi
-    echo "Upload plot file to bucket $BUCKET succesfully"
-    echo "Removing final dir $PLOTS_FINAL..."
-    $cmd rm -rf $PLOTS_FINAL
     $cmd rm -rf $PLOTS_TMP
 else
     exec "$@"
