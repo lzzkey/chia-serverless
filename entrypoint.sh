@@ -59,6 +59,8 @@ $cmd . /chia-blockchain/activate
 # Init chia env
 $cmd chia init
 
+echo "${BUCKET}"
+
 # Add Keys, Mount the secret words under SECRET_WORDS_PATH
 if [[ -f $SECRET_WORDS_PATH ]]; then
     echo "Adding keys under $SECRET_WORDS_PATH..."
@@ -115,7 +117,6 @@ elif [ $1 = "create-plots-k32" ]; then
 	$cmd rm -rf $PLOTS_FINAL
     fi
     $cmd rm -rf $PLOTS_TMP
-    $cmd sleep 9999999
 else
     exec "$@"
 fi
